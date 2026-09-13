@@ -1,0 +1,412 @@
+[
+  {
+    "type": "package_subdirective",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "package_branch_directive",
+        "named": true
+      },
+      {
+        "type": "package_dependency_directive",
+        "named": true
+      },
+      {
+        "type": "package_for_dev_directive",
+        "named": true
+      },
+      {
+        "type": "package_for_workspace_directive",
+        "named": true
+      },
+      {
+        "type": "package_integrity_directive",
+        "named": true
+      },
+      {
+        "type": "package_path_directive",
+        "named": true
+      },
+      {
+        "type": "package_registry_directive",
+        "named": true
+      },
+      {
+        "type": "package_subpath_directive",
+        "named": true
+      },
+      {
+        "type": "package_tag_directive",
+        "named": true
+      },
+      {
+        "type": "package_url_directive",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true,
+    "fields": {}
+  },
+  {
+    "type": "full_package_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "package_directive",
+          "named": true
+        },
+        {
+          "type": "package_subdirective",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "klar_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "version",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lockfile_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "package_branch_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_dependency_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "package_header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "package_header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_for_dev_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "package_for_workspace_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_header",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "source",
+            "named": true
+          }
+        ]
+      },
+      "version": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "version",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "package_integrity_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_path_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_registry_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_subpath_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_tag_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package_url_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source",
+    "named": true,
+    "fields": {
+      "commit": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "commit_number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "full_package_directive",
+          "named": true
+        },
+        {
+          "type": "klar_directive",
+          "named": true
+        },
+        {
+          "type": "lockfile_directive",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "branch",
+    "named": false
+  },
+  {
+    "type": "commit_number",
+    "named": true
+  },
+  {
+    "type": "dependency",
+    "named": false
+  },
+  {
+    "type": "dev",
+    "named": false
+  },
+  {
+    "type": "for",
+    "named": false
+  },
+  {
+    "type": "from",
+    "named": false
+  },
+  {
+    "type": "git",
+    "named": false
+  },
+  {
+    "type": "integrity",
+    "named": false
+  },
+  {
+    "type": "klar",
+    "named": false
+  },
+  {
+    "type": "local",
+    "named": false
+  },
+  {
+    "type": "lockfile",
+    "named": false
+  },
+  {
+    "type": "npm",
+    "named": false
+  },
+  {
+    "type": "package",
+    "named": false
+  },
+  {
+    "type": "path",
+    "named": false
+  },
+  {
+    "type": "registry",
+    "named": false
+  },
+  {
+    "type": "string",
+    "named": true
+  },
+  {
+    "type": "subpath",
+    "named": false
+  },
+  {
+    "type": "tag",
+    "named": false
+  },
+  {
+    "type": "url",
+    "named": false
+  },
+  {
+    "type": "version",
+    "named": true
+  },
+  {
+    "type": "workspace",
+    "named": false
+  }
+]

@@ -1,0 +1,371 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "glaslock",
+  "word": "string",
+  "rules": {
+    "source_file": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "lockfile_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "klar_directive"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "full_package_directive"
+          }
+        }
+      ]
+    },
+    "lockfile_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lockfile"
+        },
+        {
+          "type": "PATTERN",
+          "value": "v?\\d+"
+        }
+      ]
+    },
+    "klar_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "klar"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "version"
+        }
+      ]
+    },
+    "full_package_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "package_directive"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "package_subdirective"
+          }
+        }
+      ]
+    },
+    "package_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "package"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_header"
+        }
+      ]
+    },
+    "package_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "string"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "version",
+          "content": {
+            "type": "SYMBOL",
+            "name": "version"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "from"
+        },
+        {
+          "type": "FIELD",
+          "name": "source",
+          "content": {
+            "type": "SYMBOL",
+            "name": "source"
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "npm"
+        },
+        {
+          "type": "STRING",
+          "value": "local"
+        },
+        {
+          "type": "STRING",
+          "value": "workspace"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "git"
+            },
+            {
+              "type": "FIELD",
+              "name": "commit",
+              "content": {
+                "type": "SYMBOL",
+                "name": "commit_number"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "package_subdirective": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "package_branch_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_dependency_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_for_dev_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_for_workspace_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_integrity_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_path_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_registry_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_subpath_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_tag_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_url_directive"
+        }
+      ]
+    },
+    "package_branch_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "branch"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "package_dependency_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dependency"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "package_header"
+        }
+      ]
+    },
+    "package_for_dev_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "for"
+        },
+        {
+          "type": "STRING",
+          "value": "dev"
+        }
+      ]
+    },
+    "package_for_workspace_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "for"
+        },
+        {
+          "type": "STRING",
+          "value": "workspace"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "package_integrity_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "integrity"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "package_path_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "path"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "package_registry_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "registry"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "package_subpath_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "subpath"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "package_tag_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "package_url_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "url"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
+        }
+      ]
+    },
+    "version": {
+      "type": "PATTERN",
+      "value": "v(\\d+\\.)*\\d+"
+    },
+    "string": {
+      "type": "PATTERN",
+      "value": "[^\\s\\n#]+"
+    },
+    "commit_number": {
+      "type": "PATTERN",
+      "value": "[a-f\\d]+"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [
+    "package_subdirective"
+  ],
+  "reserved": {}
+}

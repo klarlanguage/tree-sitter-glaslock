@@ -1,18 +1,24 @@
 [package]
-authors = [ "ProCode Software" ]
 autoexamples = false
-categories = [ "parser-implementations", "parsing", "text-editors" ]
+categories = ["parser-implementations", "parsing", "text-editors"]
 description = "glas.lock grammar for tree-sitter"
 edition = "2024"
-keywords = [ "incremental", "parsing", "tree-sitter", "glaslock" ]
+keywords = ["incremental", "parsing", "tree-sitter", "glaslock"]
 license = "MIT"
 name = "tree-sitter-glaslock"
 readme = "README.md"
-repository = "https://github.com/tree-sitter/tree-sitter-glaslock"
+repository = "https://github.com/klarlanguage/tree-sitter-glaslock"
 version = "0.1.0"
 
 build = "bindings/rust/build.rs"
-include = [ "bindings/rust/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json", "/LICENSE" ]
+include = [
+    "bindings/rust/*",
+    "grammar.js",
+    "queries/*",
+    "src/*",
+    "tree-sitter.json",
+    "/LICENSE",
+]
 
 [lib]
 path = "bindings/rust/lib.rs"

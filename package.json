@@ -15,7 +15,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/tree-sitter/tree-sitter-glaslock.git"
+        "url": "git+https://github.com/klarlanguage/tree-sitter-glaslock.git"
     },
     "funding": "",
     "files": [

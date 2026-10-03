@@ -1,5 +1,5 @@
 LANGUAGE_NAME := tree-sitter-glaslock
-HOMEPAGE_URL := https://github.com/tree-sitter/tree-sitter-glaslock
+HOMEPAGE_URL := https://github.com/klarlanguage/tree-sitter-glaslock
 VERSION := 0.1.0
 DESCRIPTION := glas.lock grammar for tree-sitter
 

@@ -22,7 +22,7 @@
             { "name": "ProCode Software", "url": "https://github.com/ProCode-Software" }
         ],
         "links": {
-            "repository": "https://github.com/tree-sitter/tree-sitter-glaslock",
+            "repository": "https://github.com/klarlanguage/tree-sitter-glaslock",
             "funding": ""
         }
     },

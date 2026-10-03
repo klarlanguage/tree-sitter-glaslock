@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.13)
 project(tree-sitter-glaslock
         VERSION "0.1.0"
         DESCRIPTION "glas.lock grammar for tree-sitter"
-        HOMEPAGE_URL "https://github.com/tree-sitter/tree-sitter-glaslock"
+        HOMEPAGE_URL "https://github.com/klarlanguage/tree-sitter-glaslock"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)

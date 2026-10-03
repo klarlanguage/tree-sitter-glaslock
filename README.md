@@ -19,7 +19,9 @@ tree-sitter build # Compile parser to object file (use --wasm for a .wasm file)
 
 Issues, bug reports, and discussions should be created in the [main Klar repo](https://github.com/ProCode-Software/klar).
 
-Contributions should follow our [style guide](https://github.com/ProCode-Software/klar/blob/main/CONTRIBUTING.md#code-style) and [AI policy](https://github.com/ProCode-Software/klar/blob/main/CONTRIBUTING.md#using-ai) in the main Klar repo.
+Contributions should follow our [style guide](https://github.com/ProCode-Software/klar/blob/main/CONTRIBUTING.md#code-style) and [AI policy](https://github.com/ProCode-Software/klar/blob/main/CONTRIBUTING.md#using-ai) in the main Klar repo. Queries can be formatted using [`ts-query-ls format ./queries`](https://github.com/ribru17/ts_query_ls#formatter).
+
+Links to useful resources can be found in the [tree-sitter-klar](https://github.com/klarlanguage/tree-sitter-klar#resources) repository.
 
 ### Formatting
 

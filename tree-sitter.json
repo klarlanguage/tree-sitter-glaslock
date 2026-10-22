@@ -7,11 +7,11 @@
             "title": "glas.lock",
             "scope": "source.glaslock",
             "file-types": ["glas.lock"],
-            "injection-regex": "^(?:glaslock|glas\\.lock)$",
+            "injection-regex": "^glas\\.?lock$",
             "class-name": "TreeSitterGlasLock",
-            "first-line-regex": "",
             "highlights": "queries/highlights.scm",
-            "locals": "queries/locals.scm"
+            "locals": "queries/locals.scm",
+            "tags": "queries/tags.scm"
         }
     ],
     "metadata": {
